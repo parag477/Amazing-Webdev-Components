@@ -1,4 +1,4 @@
-![Amazing-WebDev-Components](https://socialify.git.ci/parag477/Amazing-WebDev-Components/image?description=1&descriptionEditable=%F0%9F%9A%80%20Curated%20collection%20of%20Amazing%20WebDev%20Components%20for%20those%20participating%20in%20hacktoberfest.%20Don%27t%20forget%20to%20start%20this%20repo.&forks=1&issues=1&language=1&name=1&owner=1&pulls=1&stargazers=1&theme=Light)
+![Amazing-WebDev-Components](https://socialify.git.ci/parag477/Amazing-WebDev-Components/image?description=1&descriptionEditable=%F0%9F%9A%80%20Curated%20collection%20of%20Amazing%20WebDev%20Components%20for%20those%20participating%20in%20hacktoberfest.%20Don%27t%20forget%20to%20start%20this%20repo.&forks=1&issues=1&name=1&owner=1&pulls=1&stargazers=1&theme=Light)
 
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
