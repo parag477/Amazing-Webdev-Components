@@ -3,7 +3,6 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
 [![GitHub issues](https://img.shields.io/github/issues/parag477/Amazing-WebDev-Components.svg)](https://github.com/parag477/Amazing-WebDev-Components/issues)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed/parag477/Amazing-WebDev-Components.svg)](https://github.com/parag477/Amazing-WebDev-Components/issues?q=is%3Aissue+is%3Aclosed)
@@ -53,7 +52,7 @@ Thanks to these **Wonderful People** 👨🏻‍💻:      🚀 **Contributions*
 	<tr>
 		<td>
 			<a href="https://github.com/parag477/Amazing-WebDev-Components/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=parag477/Amazing-WebDev-Compoonents" />
+  <img src="https://contrib.rocks/image?repo=parag477/Amazing-WebDev-Components" />
 </a>
 		</td>
 	</tr>
