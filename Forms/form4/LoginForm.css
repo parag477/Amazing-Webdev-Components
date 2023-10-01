@@ -1,7 +1,7 @@
 body{
     background-color: black;
 }
-.content2{
+.content{
     position: absolute;
     top:0;
     right: 0;
@@ -9,7 +9,7 @@ body{
     height: 100%;
     background: transparent;
 }
-.content2 .formbox{
+.content .formbox{
     display: flex;
     width: 100%;
     height: 100%;
