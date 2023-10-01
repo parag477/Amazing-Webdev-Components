@@ -1,0 +1,75 @@
+
+.html {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+body {
+  background-color: rgb(104, 188, 152);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Instruction{
+    color: white;
+    margin: 50px;
+    font-size: 60px;
+}
+span{
+    font-size: 150px;
+    color: rgb(146, 250, 215);
+}
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.circle {
+  background-color: white;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.7s;
+}
+
+.container:hover > .circle {
+  transform: scale(1.1);
+}
+
+img {
+  width: 90%;
+  opacity: 0.9;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.container:hover > .circle img {
+  transform: scale(1.3);
+  opacity: 1;
+}
+
+h1 {
+  background-color: rgb(255, 255, 255);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px;
+  border-radius: 20px;
+  bottom: 0;
+  margin: 1rem 0 0 0;
+  font-size: 3rem;
+  color: rgb(26, 26, 26);
+  transform: translateY(50%);
+  opacity: 0;
+  transition: transform 0.8s, opacity 0.7s;
+}
+
+.container:hover > h1 {
+  transform: translateY(0%);
+  opacity: 1;
+}
