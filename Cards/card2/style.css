@@ -1,4 +1,4 @@
-.card {
+/* .card {
     width: 210px;
     height: 254px;
     border-radius: 4px;
@@ -39,4 +39,53 @@
   
   .card p:hover span {
     transform: rotate(0);
+  } */
+
+
+  .card{
+    background-color:rgb(242, 239, 156);
+    width: 40%;
+    margin:auto;
+    /* background-color: :na; */
+    margin-top:10px;
+    font-family: "Lato";
+    
+    
   }
+  .card h3 {
+    font-size: 35px;
+    margin: 5px 0;
+  }
+  
+  .card h5 {
+    font-size: 18px;
+    color: #888;
+    margin: 5px 0;
+  }
+  
+  .card img{
+    width:45%;
+    margin: auto;
+    margin-top: 10px;
+    height:auto;
+    border-radius: 100%;
+    border: 3px solid black;
+  }
+
+  .card .btn{
+    width:fit-content;
+    margin: auto;
+    margin-top: 1%;
+  }
+  .card .card-footer .row p{
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .card p{
+    text-align:center;
+  }
+
+  /* .card .education{
+    display:none;
+
+  } */
