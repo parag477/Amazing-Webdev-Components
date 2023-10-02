@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Box</title>
+
+    <style>
+        .nav-right{
+    display: flex;
+    align-items: center;
+
+}
+body{
+    background-color:lightgray;
+}
+.search-box{
+    background: #efefef  ;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.search-box img{
+    width: 18px;
+
+}
+
+
+.search-box input{
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    border: 0;
+}
+
+
+.nav-left{
+    display: flex;
+    align-items: center;
+
+}
+
+.nav-left ul li{
+    list-style: none;
+display: inline-block;
+}
+    </style>
+<body>
+    <nav>
+
+         <!--It is a SEARCH BOX --> 
+        
+        <div class="nav-right">
+            <div class="search-box">
+                <img src="images/search.png" >
+                <input type="text"  placeholder="search">
+            </div>
+        </div>
+
+
+
+    
+    </nav>
+
+
+    <div class="nav-left">
+           
+<!--It is a NOTIFICATION, INBOX, VIDEO LOGO IS PRESENT -->
+        <ul>
+            <li><img src="images/notification.png" alt=""></li>
+            <li><img src="images/inbox.png" alt=""></li> 
+            <li><img src="images/video.png" alt=""></li>
+        </ul>
+    </div>
+
+
+    <div class="container">
+        <div class="left-sidebar"></div>
+        <div class="main-content"></div>
+        <div class="right-sidebar"></div>
+    </div>
+</body>
+</html>
