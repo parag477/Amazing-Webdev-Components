@@ -1,0 +1,94 @@
+form{
+    margin-left: 50vh;
+    height: 600px;
+    width: 700px;
+    background-color: rgb(31, 27, 58);
+    border: 2x solid rgb(31, 27, 58);
+    border-radius: 10px;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.612);
+    color: white;
+
+}
+form:hover{
+    box-shadow: 10px 15px rgba(0, 0, 0, 0.735);
+}
+.head{
+    margin-left: 45vh;
+}
+.body{
+    padding-left: 20px;
+}
+label{
+    font-weight: 700;
+}
+input{
+    width: 300px;
+    height: 40px;
+    background-color: rgb(31, 27, 58);
+    color: gray;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: white;
+
+}
+.group{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.pair{
+    display: flex;
+}
+
+button{
+  margin-top: 20px;
+  margin-left: 20vh;
+    width: 430px;
+    height: 45px;
+    appearance: none;
+    background-color: gray;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 20px;
+}
+button:hover{
+    background-color: orange;
+}
+
+.sign{
+    display: flex;
+    align-items: center;
+  }
+  
+  .line {
+    height: 1px;
+    flex: 1 1 0%;
+    background-color: rgba(55, 65, 81, 1);
+  }
+  
+  .sign .msg {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgba(156, 163, 175, 1);
+  }
+
+  .accounts{
+    display: flex;
+    margin-left: 44vh;
+    font-size: 1.5rem;
+  }
+  .accounts i{
+    margin-left: 10px;
+    opacity: 0.7;
+  }
+  .accounts i:hover{
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  .foot{
+    margin-left: 40vh;
+  }
