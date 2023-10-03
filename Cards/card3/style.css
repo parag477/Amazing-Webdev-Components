@@ -1,0 +1,32 @@
+
+ div{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border: 2px solid;
+    border-radius: 20px;
+    box-shadow: 2px 5px rgba(0, 0, 0, 0.411);
+}
+
+.first{
+    background-color: aqua;
+    top: 200px;
+    left: 550px;
+    z-index: 0;
+}
+.second{
+    background-color: brown;
+    top: 220px;
+    left: 575px;
+    z-index: 5;
+}
+.third{
+    background-color: orange;
+    top: 240px;
+    left: 600px;
+    z-index: 10;
+}
+div:hover{
+    transform: translateY(-40px);
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.67);
+}
