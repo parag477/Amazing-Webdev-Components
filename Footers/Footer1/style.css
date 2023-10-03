@@ -1,0 +1,51 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.footer{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 8rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid black;
+    background-color: #000000;
+}
+
+.other_links{
+    color: #ffffff;
+    display: flex;
+    gap: 3rem;
+}
+
+.other_links  > div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.other_links a{
+    color: #c9c9c9;
+    text-decoration: none;
+}
+
+.other_links a:hover{
+    color: #ffffff;
+}
+
+.logo{
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.footer .social_media_links{
+    display: flex;
+    gap: 1.5rem;
+}
