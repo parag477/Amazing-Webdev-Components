@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flip_card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="inner_box">
+                            <div class="card_front">
+                                <span class="card_front_logo"><img src="" alt=""></span>
+                                <span class="card_front_content">HOVER ME</span>
+                            </div>
+                            <div class="card_back">
+                                <img src="" alt="">
+                                <p class="first_line">MAGGIE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+</body>
+
+</html>
