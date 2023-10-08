@@ -1,0 +1,91 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.col {
+
+    flex-basis: 28%;
+    overflow: hidden;
+    
+}
+
+.card {
+    width: 500px;
+    height: 450px;
+    margin: auto;
+    perspective: 1000px;
+    cursor: pointer;
+    
+    
+}
+
+.inner_box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 750ms;
+    transform-style: preserve-3d;
+    
+   
+}
+
+.card_front,
+.card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    
+}
+
+.card_front {
+    background-color: rgb(2, 12, 58);
+}
+
+.card_front_content {
+    display: inline-block;
+    padding-top: 160px;
+    color: white;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    transition: transform 750ms;
+}
+.card_back {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1605854770838-8e5b4d6beaac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxpZ2h0aW5nfGVufDB8fDB8fHww&w=1000&q=80);
+    background-position: center;
+    visibility: 0.2px;
+    transform: rotateX(180deg);
+
+}
+
+.card:hover .inner_box {
+    transform: rotateX(-180deg);
+}
+
+.first_line {
+    padding-top: 180px;
+    display: inline-block;
+    color: white;
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: transform 750ms;
+}
