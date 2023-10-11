@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Poppins';
+    color: #3c4758;
+    background-color: #eeeeee42;
+}
+
+.logo {
+    font-size: 2em;
+    padding: 10px 20px;
+    color: #3c4758;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-family: 'Poppins';
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    height: 70px;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    box-shadow: 0 1px 1px 0 #3c4758;
+    background-color: white;
+    z-index: 99;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Poppins';
+    color: #3c4758;
+}
+
+nav ul li a:hover {
+    color: #c83531;
+}
+
+.menu-links,
+.mobile-menu-icon {
+    display: none;
+}
+
+
+.hero-section {
+    height: 100%;
+    padding: 0.2rem 2rem;
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.left-section {
+    flex-basis: 60%;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.left-section span {
+    font-size: 1em;
+    font-weight: 500;
+    color: #c83531;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+}
+
+.left-section h1 {
+    font-size: 4em;
+    font-weight: 800;
+    margin: 20px 0;
+    font-family: 'Poppins';
+}
+
+.left-section p {
+    font-weight: 300;
+}
+
+
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #3c4758;
+        margin: 5px auto;
+        transition: 0.4s;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .menu-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: -webkit-fill-available;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        overflow: hidden;
+        transition: max-height 1s ease-in;
+    }
+
+    .menu-links li a {
+        padding: 10px;
+    }
+
+    .menu-links li {
+        margin: 10px;
+    }
+
+    .menu-links li a:hover {
+        color: #c83531;
+    }
+
+    .menu-links.active {
+        max-height: 500px;
+    }
+
+    .menu-links.menu-collapsed {
+        max-height: 0;
+    }
+
+    .hero-section {
+        margin-top: 60px;
+    }
+
+    .left-section {
+        flex-basis: 100%;
+    }
+
+    .left-section h1 {
+        font-size: 2em;
+        margin: 10px 0;
+    }
+
+    .left-section p {
+        font-size: .8em;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .left-section h1 {
+        font-size: 3em;
+        margin: 10px 0;
+    }
+
+    .left-section p {
+        font-size: 1.2em;
+    }
+}
