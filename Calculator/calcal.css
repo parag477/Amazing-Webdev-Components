@@ -1,0 +1,45 @@
+
+  
+  .test {
+    height: 100px;
+    width: 28px;
+    background-color: lavender; 
+  }
+
+  .work {
+
+    width: 28px;
+    
+  background-color: lavender;
+  }
+  .stretch{
+    width: 30px;
+   
+  }
+  .trial {
+
+    width: 128px;
+    
+ 
+  }
+  div{
+    margin-top: 15%;
+   
+   
+  }
+  
+  #casual{
+background-color: red;
+color: lavender;
+}
+table{
+background-color: lightslategrey;
+border-radius: 2%;
+
+}
+h4{
+  text-align: center;
+}
+body{
+background-color: rgb(255, 206, 255);
+}

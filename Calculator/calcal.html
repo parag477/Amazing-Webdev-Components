@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CALCULATOR</title>
+ <link rel="stylesheet" type="text/css" href="calcal.css">
+</head>
+
+<body>
+  <div>
+<h4>CALCULATOR</h4>
+  <table border="2" align="center">
+    <tr>
+      <td colspan="4"> <input type="text" class="trial" id="main"></td>
+    </tr>
+    <tr>
+      <td class="stretch"><input type="button" value="+" class="work" onclick="show('+')"></td>
+      <td class="stretch"><input type="button" value="-" class="work"onclick="show('-')" ></td>
+      <td class="stretch"><input type="button" value="x" class="work"onclick="show('*')"> </td>
+      <td class="stretch"><input type="button" value="/" class="work"onclick="show('/')"></td>
+    </tr>
+    <tr>
+      <td class="stretch"><input type="button" value="7" class="work"onclick="show('7')"></td>
+      <td class="stretch"><input type="button" value="8" class="work"onclick="show('8')"></td>
+      <td class="stretch"><input type="button" value="9" class="work"onclick="show('9')"></td>
+      <td rowspan="4"  class="stretch"><input type="button" value="=" class="test" onclick="answer()"></td>
+    </tr>
+    <tr>
+      <td class="stretch"><input type="button" value="4" class="work"onclick="show('4')"></td>
+      <td class="stretch"><input type="button" value="5" class="work"onclick="show('5')"></td>
+      <td class="stretch"><input type="button" value="6" class="work"onclick="show('6')"></td>
+    </tr>
+    <tr>
+      <td class="stretch"><input type="button" value="1" class="work" onclick="show('1')"></td>
+      <td class="stretch"><input type="button" value="2" class="work"onclick="show('2')"></td>
+      <td class="stretch"><input type="button" value="3" class="work"onclick="show('3')"></td>
+    </tr>
+    <tr>
+      <td class="stretch"><input type="button" value="." class="work"onclick="show('.')"></td>
+      <td class="stretch"><input type="button" value="0" class="work"onclick="show('0')"></td>
+      <td class="stretch"><input type="button" value="AC" class="work"onclick="erase()" id="casual"></td>
+    </tr>
+  </table>
+  </div>
+  
+  <script>
+    var val,a;
+function show(num)
+{
+document.getElementById("main").value+=num;
+}
+function answer(){
+  z=document.getElementById("main").value;
+  document.getElementById("main").value=eval(z)
+}
+function erase()
+{
+  document.getElementById("main").value=" ";
+}
+  </Script>
+</body>
+
+</html>
