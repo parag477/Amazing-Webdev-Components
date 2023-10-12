@@ -1,0 +1,38 @@
+.custom-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  
+  .custom-button:hover {
+    background-color: #2980b9;
+    
+  }
+  
+  
+  .custom-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+     background: linear-gradient(180deg, pink, #2980b9); 
+    border-radius: 10px;
+    z-index: -1;
+    transition: opacity 0.3s;
+  }
+  
+   .custom-button:hover::before {
+    opacity: 0.7;
+  } 
+  
