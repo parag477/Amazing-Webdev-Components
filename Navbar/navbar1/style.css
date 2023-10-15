@@ -1,6 +1,7 @@
 body{
     padding: 0%;
     margin: 0%;
+    font-family:poppins;
     box-sizing: border-box;
 }
 /*nav section */
@@ -20,6 +21,7 @@ padding: 2vh 4vw;
     color: white;
     text-decoration: none;
 }
+
 .nav img{
     height: 40px;
     border-radius: 50%;
@@ -36,7 +38,7 @@ padding: 2vh 4vw;
     display: flex;
     gap: 3vw;
 }
-.nav-right h4 a:hover{
+.nav-right h4 a:hover{    
     color: rgb(18, 237, 14);
     
 }
