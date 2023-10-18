@@ -1,87 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Box</title>
 
     <style>
-        .nav-right{
-    display: flex;
-    align-items: center;
+      :root {
+        --background-light: lightgray;
+        --background-dark: #222;
+        --text-light: black;
+        --text-dark: white;
+      }
 
-}
-body{
-    background-color:lightgray;
-}
-.search-box{
-    background: #efefef  ;
-    width: 350px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-}
+      body {
+        background-color: var(--background-light);
+        color: var(--text-light);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        transition: background-color 0.3s, color 0.3s;
+      }
 
-.search-box img{
-    width: 18px;
+      body.dark-theme {
+        background-color: var(--background-dark);
+        color: var(--text-dark);
+      }
 
-}
+      .search-box {
+        background: var(--background-light);
+        width: 350px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border: 3px solid var(--text-light);
+      }
 
+      .search-box img {
+        width: 18px;
+      }
 
-.search-box input{
-    width: 100%;
-    background: transparent;
-    padding: 10px;
-    outline: none;
-    border: 0;
-}
+      .search-box input {
+        width: calc(100% - 24px);
+        background: transparent;
+        padding: 10px;
+        outline: none;
+        border: 0;
+        color: var(--text-dark);
+      }
 
+      /* Additional style for dark mode */
+      body.dark-theme .search-box {
+        background: var(--background-dark);
+        border: 1px solid var(--text-dark);
+      }
 
-.nav-left{
-    display: flex;
-    align-items: center;
+      .nav-left {
+        display: flex;
+        align-items: center;
+      }
 
-}
+      .nav-left ul li {
+        list-style: none;
+        display: inline-block;
+      }
 
-.nav-left ul li{
-    list-style: none;
-display: inline-block;
-}
+      .toggle-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+
+      .toggle-button button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
     </style>
-<body>
+  </head>
+  <body>
+    <div class="toggle-button">
+      <button onclick="toggleTheme()">Toggle Theme</button>
+    </div>
     <nav>
-
-         <!--It is a SEARCH BOX --> 
-        
-        <div class="nav-right">
-            <div class="search-box">
-                <img src="images/search.png" >
-                <input type="text"  placeholder="search">
-            </div>
-        </div>
-
-
-
-    
+      <!--It is a SEARCH BOX -->
+      <div class="search-box">
+        <img src="images/search.png" alt="" />
+        <input type="text" placeholder="search" />
+      </div>
     </nav>
 
-
     <div class="nav-left">
-           
-<!--It is a NOTIFICATION, INBOX, VIDEO LOGO IS PRESENT -->
-        <ul>
-            <li><img src="images/notification.png" alt=""></li>
-            <li><img src="images/inbox.png" alt=""></li> 
-            <li><img src="images/video.png" alt=""></li>
-        </ul>
+      <!--It is a NOTIFICATION, INBOX, VIDEO LOGO IS PRESENT -->
+      <ul>
+        <li><img src="images/notification.png" alt="" /></li>
+        <li><img src="images/inbox.png" alt="" /></li>
+        <li><img src="images/video.png" alt="" /></li>
+      </ul>
     </div>
-
 
     <div class="container">
-        <div class="left-sidebar"></div>
-        <div class="main-content"></div>
-        <div class="right-sidebar"></div>
+      <div class="left-sidebar"></div>
+      <div class="main-content"></div>
+      <div class="right-sidebar"></div>
     </div>
-</body>
+
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        body.classList.toggle("dark-theme");
+      }
+    </script>
+  </body>
 </html>
+
