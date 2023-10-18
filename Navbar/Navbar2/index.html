@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;800&display=swap" rel="stylesheet">
+    <title>Responsive Navbar</title>
+</head>
+
+<body>
+    <nav>
+        <p class="logo">Navbar</p>
+        <ul class="desktop-menu">
+            <li class="zoom"><a href="#home">Home</a></li>
+            <li class="zoom"><a href="#about">About</a></li>
+            <li class="zoom"><a href="#service">Service</a></li>
+            <li class="zoom"><a href="#portfolio">Portfolio</a></li>
+            <li class="zoom"><a href="#contact">Contact</a></li>
+        </ul>
+        <ul class="menu-links menu-collapsed">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    <div id="about" class="hero-section">
+        <div class="left-section">
+            <span style="font-size: 250%">Hacktoberfest 2023</span>
+            <div class="typewriter"><h1>Amazing web components</h1></div>
+            <p>Make your first Pull Request on Hacktoberfest 2023. 
+            Don't forget to spread love and if you like don't forget to give us a star⭐️</p>
+        </div>
+    </div>
+    <script>
+        const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
+        const menuLinks = document.querySelector(".menu-links");
+
+        mobileMenuIcon.addEventListener("click", () => {
+            menuLinks.classList.toggle("active");
+            menuLinks.classList.toggle("menu-collapsed");
+        });
+    </script>
+</body>
+
+</html>
