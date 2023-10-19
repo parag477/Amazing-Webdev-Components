@@ -1,0 +1,116 @@
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --hue: 18;
+    --bg: hsl(var(--hue),90%,90%);
+    --fg: hsl(var(--hue),90%,10%);
+    --primary: hsl(var(--hue),90%,50%);
+    --trans-dur: 0.3s;
+    font-size: calc(16px + (24 - 16) * (100vw - 320px) / (2560 - 320));
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    display: flex;
+    font: 1em/1.5 sans-serif;
+    height: 100vh;
+    transition: background-color var(--trans-dur), color var(--trans-dur);
+  }
+  
+  .pl {
+    margin: auto;
+    width: 8em;
+    height: 8em;
+  }
+  .pl__line, .pl__line-g, .pl__lines {
+    animation: lineRotate 2s ease-in-out infinite;
+  }
+  .pl__line {
+    animation-name: lineMove;
+    animation-timing-function: ease-in;
+  }
+  .pl__line-g {
+    animation-name: lineFade;
+    animation-timing-function: linear;
+  }
+  .pl__line-g:nth-child(2), .pl__line-g:nth-child(2) .pl__line {
+    animation-delay: 0.1666666667s;
+  }
+  .pl__line-g:nth-child(3), .pl__line-g:nth-child(3) .pl__line {
+    animation-delay: 0.25s;
+  }
+  .pl__line-g:nth-child(4), .pl__line-g:nth-child(4) .pl__line {
+    animation-delay: 0.3333333333s;
+  }
+  .pl__line-g:nth-child(5), .pl__line-g:nth-child(5) .pl__line {
+    animation-delay: 0.4166666667s;
+  }
+  .pl__line-g:nth-child(6), .pl__line-g:nth-child(6) .pl__line {
+    animation-delay: 0.5s;
+  }
+  .pl__line-g:nth-child(7), .pl__line-g:nth-child(7) .pl__line {
+    animation-delay: 0.5833333333s;
+  }
+  .pl__line-g:nth-child(8), .pl__line-g:nth-child(8) .pl__line {
+    animation-delay: 0.6666666667s;
+  }
+  .pl__line-g:nth-child(9), .pl__line-g:nth-child(9) .pl__line {
+    animation-delay: 0.75s;
+  }
+  .pl__line-g:nth-child(10), .pl__line-g:nth-child(10) .pl__line {
+    animation-delay: 0.8333333333s;
+  }
+  .pl__line-g:nth-child(11), .pl__line-g:nth-child(11) .pl__line {
+    animation-delay: 0.9166666667s;
+  }
+  .pl__line-g:nth-child(12), .pl__line-g:nth-child(12) .pl__line {
+    animation-delay: 1s;
+  }
+  .pl__lines {
+    transform-origin: 64px 64px;
+  }
+  .pl__layer .pl__lines {
+    stroke: #f2c40d;
+  }
+  .pl__layer + .pl__layer .pl__lines {
+    stroke: #f2520d;
+  }
+  
+  /* Dark theme */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: hsl(var(--hue),90%,10%);
+      --fg: hsl(var(--hue),90%,90%);
+    }
+  }
+  /* Animations */
+  @keyframes lineRotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(0.5turn);
+    }
+  }
+  @keyframes lineFade {
+    from, 50%, to {
+      opacity: 0;
+    }
+    10%, 45% {
+      opacity: 1;
+    }
+  }
+  @keyframes lineMove {
+    from {
+      stroke-dashoffset: -32;
+    }
+    50%, to {
+      stroke-dashoffset: 32;
+    }
+  }
