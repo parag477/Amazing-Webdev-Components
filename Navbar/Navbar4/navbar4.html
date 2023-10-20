@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <!-- Bootstrap CSS and JavaScript -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Your custom styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .nav {
+            background-color: #2A2A2A;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .nav-left img {
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #FFC107;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .nav-left h3 {
+            font-size: 24px;
+            margin: 0;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-right li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav-right a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            transition: background-color 0.3s;
+        }
+        .nav-right a:hover {
+            background-color: #45a049;
+        }
+        .nav-right i {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        span {
+            color: #FFC107;
+        }
+
+        /* Media Query for smaller screens */
+        @media (max-width: 768px) {
+            .nav-right {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            }
+            .nav-right.active {
+                display: flex;
+            }
+            .nav-right a {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-left">
+            <img src="images/profile-picture.jpg" alt="Company Logo" />
+            <h3><span>Company Name</span></h3>
+        </div>
+        <div class="nav-right">
+            <li><a href="http://">Home</a></li>
+            <li><a href="http://">About</a></li>
+            <li><a href="http://">Contact</a></li>
+            <li><a href="http://">Projects</a></li>
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.fa-bars').addEventListener('click', function() {
+            document.querySelector('.nav-right').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
