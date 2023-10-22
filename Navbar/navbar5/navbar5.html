@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Bootstrap CSS and JavaScript -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Your custom styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .nav {
+            background-color: #07597d;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+        .nav-left img {
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #FFC107;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .nav-left h3 {
+            font-size: 24px;
+            margin: 0;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+        .icons{
+            display: none;
+        }
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        .nav-right li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav-right a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #a1ccd1;
+            transition: background-color 0.3s;
+        }
+        .nav-right a:hover {
+            background-color: #45a049;
+        }
+
+        span {
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .nav-left h3 {
+                flex: 1;
+            }
+            .nav-right {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                padding: 20px;
+            }
+            .nav-right.active {
+                display: flex;
+            }
+            .nav-right a {
+                display: block;
+            }
+            .nav-right i {
+                font-size: 36px;
+                cursor: pointer;
+                display: block;
+            }
+            .icons{
+                display: block;
+            }
+        }
+        @media (min-width: 769px) {
+            .nav-right {
+                display: flex;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-left">
+            <h3><span>Company Name</span></h3>
+        </div>
+        <i class="fas fa-bars icons"></i> <!-- Font Awesome hamburger icon -->
+        <div class="nav-right">
+            <li><a href="http://">Home</a></li>
+            <li><a href="http://">About</a></li>
+            <li><a href="http://">Projects</a></li>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.fa-bars').addEventListener('click', function() {
+            document.querySelector('.nav-right').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
