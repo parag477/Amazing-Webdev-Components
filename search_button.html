@@ -6,6 +6,7 @@
     <title>Search Box</title>
 
     <style>
+      /* Your root variables */
       :root {
         --background-light: lightgray;
         --background-dark: #222;
@@ -17,7 +18,6 @@
         background-color: var(--background-light);
         color: var(--text-light);
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
@@ -54,12 +54,6 @@
         color: var(--text-dark);
       }
 
-      /* Additional style for dark mode */
-      body.dark-theme .search-box {
-        background: var(--background-dark);
-        border: 1px solid var(--text-dark);
-      }
-
       .nav-left {
         display: flex;
         align-items: center;
@@ -69,19 +63,6 @@
         list-style: none;
         display: inline-block;
       }
-
-      .toggle-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-      }
-
-      .toggle-button button {
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
     </style>
   </head>
   <body>
@@ -89,7 +70,6 @@
       <button onclick="toggleTheme()">Toggle Theme</button>
     </div>
     <nav>
-      <!--It is a SEARCH BOX -->
       <div class="search-box">
         <img src="images/search.png" alt="" />
         <input type="text" placeholder="search" />
@@ -97,7 +77,6 @@
     </nav>
 
     <div class="nav-left">
-      <!--It is a NOTIFICATION, INBOX, VIDEO LOGO IS PRESENT -->
       <ul>
         <li><img src="images/notification.png" alt="" /></li>
         <li><img src="images/inbox.png" alt="" /></li>
