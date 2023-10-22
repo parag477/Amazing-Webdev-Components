@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Heart-Beat Button</title>
+
+<style>
+  .super-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF5733;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for animation */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .super-button:hover {
+    background-color: #E63A21;
+    transform: scale(1.1); /* Scale the button on hover */
+    animation: pulse 1s infinite; /* Added pulse animation */
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>
+</head>
+<body>
+  <a href="#" class="super-button" id="super-button">Click Me</a>
+
+  <script>
+    document.getElementById("super-button").addEventListener("click", function() {
+      alert("You clicked the super button!");
+    });
+  </script>
+</body>
+</html>
