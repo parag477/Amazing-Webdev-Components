@@ -1,0 +1,35 @@
+*{
+    margin: auto;
+    padding: auto;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #84d1e1, #331354,#17012e);
+}
+.container button
+{
+    width:10rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2rem;
+    font-size: 1.5rem;
+    border: 2px solid rgb(15, 40, 40);
+    border-radius: 2rem;
+    background-color: #23192e;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+.container button:hover
+{
+    cursor: pointer;
+    
+    background-color: rgb(70, 93, 225);
+    color: #130127;
+    box-shadow: 2px 3px 20px 5px rgb(5, 15, 214);
+}
