@@ -1,3 +1,11 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
 .button {
     width: 120px;
     height: 30px;
@@ -9,6 +17,7 @@
     border: 3px solid rgb(255, 239, 94);
     background-color: rgb(255, 239, 94);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.137);
+    align-items: center;
   }
   
   .text {
