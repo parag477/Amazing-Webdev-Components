@@ -10,6 +10,9 @@
       --text-color-light: #000000;
       --bg-color-dark: #121212;
       --text-color-dark: #ffffff;
+      --button-bg: #6200ea;
+      --button-hover-bg: #3700b3;
+      --button-text-color: #ffffff;
     }
 
     body.light-mode {
@@ -26,16 +29,29 @@
       position: fixed;
       top: 10px;
       right: 10px;
-      padding: 8px;
+      padding: 10px 20px;
+      background-color: var(--button-bg);
+      color: var(--button-text-color);
+      border: none;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
       cursor: pointer;
-      background-color: #ddd;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background-color: var(--button-hover-bg);
+      transform: scale(1.05);
+    }
+
+    .theme-toggle:active {
+      transform: scale(0.95);
     }
   </style>
 </head>
 <body>
-  <div class="theme-toggle">Toggle Theme</div>
+  <button class="theme-toggle">Toggle Theme</button>
 
   <script>
     const toggleButton = document.querySelector('.theme-toggle');
@@ -44,6 +60,7 @@
     function setTheme(theme) {
       document.body.classList.remove('light-mode', 'dark-mode');
       document.body.classList.add(`${theme}-mode`);
+      toggleButton.textContent = theme === 'auto' ? 'Auto Theme' : `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`;
     }
 
     function applyAdaptiveMode() {
@@ -77,3 +94,4 @@
   </script>
 </body>
 </html>
+
