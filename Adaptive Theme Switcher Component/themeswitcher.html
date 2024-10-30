@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adaptive Theme Switcher</title>
+  <style>
+    :root {
+      --bg-color-light: #ffffff;
+      --text-color-light: #000000;
+      --bg-color-dark: #121212;
+      --text-color-dark: #ffffff;
+      --button-bg: #6200ea;
+      --button-hover-bg: #3700b3;
+      --button-text-color: #ffffff;
+    }
+
+    body.light-mode {
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
+    }
+
+    body.dark-mode {
+      background-color: var(--bg-color-dark);
+      color: var(--text-color-dark);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color: var(--button-bg);
+      color: var(--button-text-color);
+      border: none;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background-color: var(--button-hover-bg);
+      transform: scale(1.05);
+    }
+
+    .theme-toggle:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle">Toggle Theme</button>
+
+  <script>
+    const toggleButton = document.querySelector('.theme-toggle');
+    let mode = 'auto';  // Modes: 'light', 'dark', 'auto'
+
+    function setTheme(theme) {
+      document.body.classList.remove('light-mode', 'dark-mode');
+      document.body.classList.add(`${theme}-mode`);
+      toggleButton.textContent = theme === 'auto' ? 'Auto Theme' : `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`;
+    }
+
+    function applyAdaptiveMode() {
+      const hour = new Date().getHours();
+      setTheme(hour >= 6 && hour < 18 ? 'light' : 'dark');
+    }
+
+    function initTheme() {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+    }
+
+    toggleButton.addEventListener('click', () => {
+      if (mode === 'auto') {
+        mode = 'light';
+        setTheme('light');
+      } else if (mode === 'light') {
+        mode = 'dark';
+        setTheme('dark');
+      } else if (mode === 'dark') {
+        mode = 'auto';
+        applyAdaptiveMode();
+      }
+    });
+
+    if (mode === 'auto') applyAdaptiveMode();
+    initTheme();
+  </script>
+</body>
+</html>
+
