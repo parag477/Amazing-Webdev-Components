@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Data Graph with Predictions</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div id="graph" style="width: 100%; height: 500px;"></div>
+
+  <script>
+    // Generate initial data
+    let xData = [0, 1, 2, 3, 4, 5];
+    let yData = [1, 2, 3, 2, 4, 3];
+
+    // Simple prediction function (moving average)
+    function predictNextValue(data) {
+      const lastValues = data.slice(-3);
+      const avg = lastValues.reduce((a, b) => a + b, 0) / lastValues.length;
+      return avg;
+    }
+
+    // Update function for live data
+    function updateData() {
+      const nextX = xData.length;
+      const nextY = predictNextValue(yData);
+
+      xData.push(nextX);
+      yData.push(nextY + (Math.random() * 0.5 - 0.25));  // add random noise
+
+      Plotly.update('graph', {
+        x: [xData],
+        y: [yData]
+      });
+
+      setTimeout(updateData, 2000);  // Update every 2 seconds
+    }
+
+    // Initial Plot
+    Plotly.newPlot('graph', [{
+      x: xData,
+      y: yData,
+      mode: 'lines+markers',
+      line: { color: 'blue' },
+      name: 'Data with Prediction'
+    }], {
+      title: 'Real-Time Data with Predictions',
+      xaxis: { title: 'Time' },
+      yaxis: { title: 'Value' }
+    });
+
+    // Start live update
+    updateData();
+  </script>
+</body>
+</html>
