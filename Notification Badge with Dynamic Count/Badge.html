@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Badge</title>
+  <style>
+    .notification-container {
+      position: relative;
+      display: inline-block;
+      font-size: 18px;
+      margin: 20px;
+    }
+
+    .notification-icon {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #007bff;
+      color: #ffffff;
+      border-radius: 50%;
+    }
+
+    .badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+
+    .notifications-list {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: #f8f9fa;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      width: 200px;
+      border-radius: 5px;
+    }
+
+    .notifications-list.active {
+      display: block;
+    }
+
+    .notification-item {
+      padding: 10px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .notification-item:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="notification-container">
+    <div class="notification-icon">🔔</div>
+    <div class="badge" id="badge-count">3</div>
+
+    <div class="notifications-list" id="notifications-list">
+      <div class="notification-item">New message received</div>
+      <div class="notification-item">Friend request accepted</div>
+      <div class="notification-item">New comment on your post</div>
+    </div>
+  </div>
+
+  <script>
+    const badgeCount = document.getElementById('badge-count');
+    const notificationsList = document.getElementById('notifications-list');
+    let notifications = 3;
+
+    document.querySelector('.notification-icon').addEventListener('click', () => {
+      notificationsList.classList.toggle('active');
+    });
+
+    notificationsList.addEventListener('click', (event) => {
+      if (event.target.classList.contains('notification-item')) {
+        event.target.style.display = 'none';
+        notifications--;
+        badgeCount.textContent = notifications;
+        if (notifications === 0) badgeCount.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
