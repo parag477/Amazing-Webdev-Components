@@ -1,1 +1,21 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeforces</title>
+    <script src="codeforces.js"></script>
+</head>
+<body>
+    <label for="username">Codeforces Username</label>
+    <input id="username" name="username" type="text" placeholder="username" autocomplete="on">
+    <button onclick="find_user()">Submit</button>
+    <p id="error" style="color: red;"></p>
+    <div id="info">
+        <h2 id="name">USERNAME</h2>
+        <p id="contest">Number of contest given: </p>
+        <p id="highest_rating">Highest Rating: </p>
+        <p id="current_rating">Current Rating: </p>
+    </div>
+</body>
+</html>
