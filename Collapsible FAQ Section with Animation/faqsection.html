@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Section</title>
+  <style>
+    .faq-container {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e0e0e0;
+      padding: 10px 0;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      color: #007bff;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      font-size: 16px;
+      color: #333;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 100px; /* Adjustable based on content length */
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">What is your return policy?</div>
+      <div class="faq-answer">Our return policy allows returns within 30 days of purchase. Please keep your receipt.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Do you offer international shipping?</div>
+      <div class="faq-answer">Yes, we offer international shipping. Fees and times vary based on the destination.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How can I track my order?</div>
+      <div class="faq-answer">Once your order is shipped, you will receive a tracking number via email.</div>
+    </div>
+  </div>
+
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
