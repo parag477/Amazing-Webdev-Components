@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Loader 8 — Neon Orbital Loader</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="center">
+      <div class="neon-loader" aria-live="polite" aria-busy="true">
+        <!-- SVG orbital rings -->
+        <svg
+          class="orbits"
+          viewBox="0 0 220 220"
+          width="220"
+          height="220"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7b61ff" />
+              <stop offset="100%" stop-color="#00d4ff" />
+            </linearGradient>
+            <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ff6b6b" />
+              <stop offset="100%" stop-color="#ffb86b" />
+            </linearGradient>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="6" result="b" />
+              <feMerge>
+                <feMergeNode in="b" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <g transform="translate(110,110)">
+            <circle
+              class="ring ring-1"
+              r="78"
+              fill="none"
+              stroke="url(#g1)"
+              stroke-width="6"
+              stroke-linecap="round"
+              filter="url(#glow)"
+            />
+            <circle
+              class="ring ring-2"
+              r="56"
+              fill="none"
+              stroke="url(#g2)"
+              stroke-width="6"
+              stroke-linecap="round"
+              filter="url(#glow)"
+            />
+            <circle
+              class="ring ring-3"
+              r="34"
+              fill="none"
+              stroke="#fff"
+              stroke-width="4"
+              stroke-linecap="round"
+              opacity="0.06"
+            />
+            <!-- orbiting dot -->
+            <circle class="dot" r="6" cx="78" cy="0" fill="#fff" />
+            <circle class="dot2" r="5" cx="56" cy="0" fill="#fff" />
+          </g>
+        </svg>
+
+        <div class="center-dot" aria-hidden></div>
+        <div class="label">Loading…</div>
+      </div>
+    </main>
+  </body>
+</html>
