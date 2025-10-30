@@ -1,0 +1,150 @@
+:root {
+  --bg: #081019;
+  --card: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  --neon-a: #7b61ff;
+  --neon-b: #00d4ff;
+  --accent: #ffd166;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  background: var(--bg);
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+  color: #e6eef8;
+}
+.demo-wrap {
+  width: 420px;
+}
+.btn-card {
+  background: var(--card);
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(2, 6, 23, 0.7);
+  text-align: center;
+}
+.btn-card h1 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  color: #fff;
+}
+.subtitle {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+}
+
+.morph-btn {
+  position: relative;
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 14px;
+  outline: none;
+}
+.morph-btn .btn-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--neon-a), var(--neon-b));
+  filter: blur(12px);
+  opacity: 0.25;
+  transition: opacity 0.35s, transform 0.35s;
+}
+.morph-btn .btn-content {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.06)
+  );
+  backdrop-filter: blur(6px);
+  box-shadow: rgba(11, 20, 40, 0.7) 0 8px 20px,
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s;
+}
+.morph-btn .icon {
+  color: var(--neon-b);
+  opacity: 0.95;
+  transition: transform 0.25s;
+}
+.morph-btn .label {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* morphing shape effect on hover */
+.morph-btn:hover .btn-bg {
+  opacity: 0.7;
+  transform: scale(1.05) rotate(-6deg);
+}
+.morph-btn:hover .btn-content {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 40px rgba(11, 20, 40, 0.65);
+}
+.morph-btn:hover .icon {
+  transform: translateX(6px) rotate(8deg);
+}
+
+/* pressed */
+.morph-btn:active .btn-content {
+  transform: translateY(2px);
+  box-shadow: 0 6px 14px rgba(11, 20, 40, 0.6);
+}
+.morph-btn:focus-visible {
+  box-shadow: 0 0 0 4px rgba(123, 97, 255, 0.12);
+  border-radius: 14px;
+}
+
+/* subtle neon shine */
+.morph-btn .btn-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0)
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+}
+
+.note {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+/* small responsive */
+@media (max-width: 420px) {
+  .demo-wrap {
+    width: 100%;
+  }
+  .morph-btn .btn-content {
+    padding: 12px 18px;
+  }
+}

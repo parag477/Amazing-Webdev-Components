@@ -1,0 +1,166 @@
+:root {
+  --bg: #05060a;
+  --panel: #0b0d12;
+  --glow1: #7b61ff;
+  --glow2: #00d4ff;
+  --accentA: #ff6b6b;
+  --accentB: #ffb86b;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: radial-gradient(
+      600px 300px at 10% 20%,
+      rgba(123, 97, 255, 0.05),
+      transparent
+    ),
+    var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.neon-loader {
+  width: 260px;
+  height: 320px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.8);
+  position: relative;
+}
+.orbits {
+  display: block;
+}
+.center-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--glow1), var(--glow2));
+  box-shadow: 0 6px 30px rgba(123, 97, 255, 0.16),
+    0 0 18px rgba(0, 212, 255, 0.08);
+  position: absolute;
+  top: 124px;
+}
+.label {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* Rings animation */
+.ring {
+  stroke-dasharray: 490;
+  stroke-dashoffset: 0;
+  transform-origin: 110px 110px;
+  transform-box: fill-box;
+}
+.ring-1 {
+  animation: rotateA 2.8s linear infinite;
+}
+.ring-2 {
+  animation: rotateB 2.2s linear infinite;
+}
+.ring-3 {
+  animation: slow-rotate 6s linear infinite;
+}
+
+/* orbiting dots follow rotation via transform-origin */
+.dot {
+  transform-origin: 110px 110px;
+  animation: orbit1 2.8s linear infinite;
+}
+.dot2 {
+  transform-origin: 110px 110px;
+  animation: orbit2 2.2s linear infinite;
+}
+
+@keyframes rotateA {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateB {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes slow-rotate {
+  from {
+    transform: rotate(-0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes orbit1 {
+  from {
+    transform: rotate(0deg) translateX(0);
+  }
+  to {
+    transform: rotate(360deg) translateX(0);
+  }
+}
+@keyframes orbit2 {
+  from {
+    transform: rotate(0deg) translateX(0);
+  }
+  to {
+    transform: rotate(-360deg) translateX(0);
+  }
+}
+
+/* small responsive and polish */
+.neon-loader {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+.neon-loader:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+}
+
+@media (max-width: 420px) {
+  .neon-loader {
+    width: 220px;
+    height: 280px;
+    padding: 18px;
+  }
+  .center-dot {
+    top: 108px;
+  }
+}
