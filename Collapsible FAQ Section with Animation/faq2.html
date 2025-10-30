@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced FAQ Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .faq-container {
+      width: 90%;
+      max-width: 600px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e0e0e0;
+      padding: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .faq-item:hover {
+      background-color: #f9f9f9;
+    }
+
+    .faq-question {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+      transition: max-height 0.4s ease, padding-top 0.3s ease;
+      padding-top: 0;
+      opacity: 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 100px; /* Adjust as needed */
+      padding-top: 10px;
+      opacity: 1;
+    }
+
+    .icon {
+      font-size: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .faq-item.active .icon {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">
+        What is your return policy?
+        <span class="icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Our return policy allows returns within 30 days of purchase. Please keep your receipt and ensure the item is in its original condition.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Do you offer international shipping?
+        <span class="icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes, we offer international shipping. Shipping fees and delivery times vary based on your location.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How can I track my order?
+        <span class="icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        After your order is shipped, you will receive a tracking number by email, which you can use to monitor your package.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+        
+        // Close other open items (optional)
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) otherItem.classList.remove('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
