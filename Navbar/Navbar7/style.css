@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.navbar {
+    background: #000000;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 60px;
+    transition: width 0.3s ease;
+}
+
+.nav-item {
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.nav-item i {
+    font-size: 1.5rem;
+    min-width: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-text {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.navbar:hover {
+    width: 200px;
+}
+
+.navbar:hover .nav-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item:hover i {
+    transform: scale(1.2) rotate(5deg);
+}
